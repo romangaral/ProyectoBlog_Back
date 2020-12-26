@@ -33,10 +33,10 @@ public class Usuario implements Serializable {
 	@OneToMany(mappedBy="usuario",fetch=FetchType.EAGER,cascade= CascadeType.ALL, orphanRemoval=true)
 	private List<UsuarioRol> roles;
 	
-	@OneToMany(mappedBy="usuario",fetch=FetchType.EAGER,cascade= CascadeType.ALL, orphanRemoval=true)
+	@OneToMany(mappedBy="usuario",cascade= CascadeType.ALL, orphanRemoval=true)
 	private List<Entrada> entradas ;
 	
-	@OneToMany(mappedBy="usuario",fetch=FetchType.EAGER,cascade= CascadeType.ALL, orphanRemoval=true)
+	@OneToMany(mappedBy="usuario",cascade= CascadeType.ALL, orphanRemoval=true)
 	private List<Comentario> comentarios;
 
 	public int getIdUsuario() {
