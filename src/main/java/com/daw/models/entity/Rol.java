@@ -1,11 +1,15 @@
 package com.daw.models.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +21,9 @@ public class Rol implements Serializable {
 	private int idRol;
 
 	private String tipo;
+	
+	@OneToMany(mappedBy="rol",fetch=FetchType.EAGER,cascade= CascadeType.ALL, orphanRemoval=true)
+	private List<UsuarioRol> usuarios;
 
 	public int getIdrol() {
 		return idRol;

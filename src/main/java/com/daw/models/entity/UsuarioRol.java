@@ -19,11 +19,11 @@ public class UsuarioRol implements Serializable {
 	private int idusuariorol;
 	
 	@ManyToOne
-	@JoinColumn(name="idUsuario")
+	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 	
 	@ManyToOne
-	@JoinColumn(name="idRol")
+	@JoinColumn(name="id_rol")
 	private Rol rol;
 
 	public int getIdusuariorol() {
