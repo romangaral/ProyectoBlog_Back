@@ -3,6 +3,7 @@ package com.daw.models.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,7 @@ public class Entrada {
 	private String texto;
 	private int valoracion;
 	
+	@Column(name = "fecha_subida")
 	@Temporal(TemporalType.DATE)
 	private Date fechaSubida;
 	

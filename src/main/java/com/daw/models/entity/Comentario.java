@@ -2,6 +2,7 @@ package com.daw.models.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,8 +23,9 @@ public class Comentario {
 
 	private String texto;
 
+	@Column(name = "fecha_comentario")
 	@Temporal(TemporalType.DATE)
-	private Date fechaSubida;
+	private Date fechaComentario;
 
 	@ManyToOne
 	@JoinColumn(name = "id_usuario")
@@ -50,11 +52,11 @@ public class Comentario {
 	}
 
 	public Date getFechaSubida() {
-		return fechaSubida;
+		return fechaComentario;
 	}
 
 	public void setFechaSubida(Date fechaSubida) {
-		this.fechaSubida = fechaSubida;
+		this.fechaComentario = fechaSubida;
 	}
 
 	public Usuario getUsuario() {
