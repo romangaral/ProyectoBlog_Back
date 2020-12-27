@@ -18,18 +18,18 @@ public class Rol implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idRol;
+	private Long idRol;
 
 	private String tipo;
 	
 	@OneToMany(mappedBy="rol",fetch=FetchType.EAGER,cascade= CascadeType.ALL, orphanRemoval=true)
 	private List<UsuarioRol> usuarios;
 
-	public int getIdrol() {
+	public Long getIdrol() {
 		return idRol;
 	}
 
-	public void setIdrol(int idrol) {
+	public void setIdrol(Long idrol) {
 		this.idRol = idrol;
 	}
 

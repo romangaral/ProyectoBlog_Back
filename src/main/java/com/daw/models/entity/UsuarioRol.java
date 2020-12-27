@@ -16,7 +16,7 @@ public class UsuarioRol implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idusuariorol;
+	private Long idusuariorol;
 	
 	@ManyToOne
 	@JoinColumn(name="id_usuario")
@@ -26,11 +26,11 @@ public class UsuarioRol implements Serializable {
 	@JoinColumn(name="id_rol")
 	private Rol rol;
 
-	public int getIdusuariorol() {
+	public Long getIdusuariorol() {
 		return idusuariorol;
 	}
 
-	public void setIdusuariorol(int idusuariorol) {
+	public void setIdusuariorol(Long idusuariorol) {
 		this.idusuariorol = idusuariorol;
 	}
 

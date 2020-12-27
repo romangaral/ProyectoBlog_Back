@@ -22,7 +22,7 @@ public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idUsuario;
+	private Long idUsuario;
 
 	private String nombre;
 	private String apellido;
@@ -41,11 +41,11 @@ public class Usuario implements Serializable {
 	@OneToMany(mappedBy="usuario",cascade= CascadeType.ALL, orphanRemoval=true)
 	private List<Comentario> comentarios;
 
-	public int getIdUsuario() {
+	public Long getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
