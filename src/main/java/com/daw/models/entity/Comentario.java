@@ -35,6 +35,25 @@ public class Comentario {
 	@JoinColumn(name = "id_entrada")
 	private Entrada entrada;
 
+	public Comentario() {
+		super();
+	}
+
+	public Comentario(Long idComentario, String texto, Date fechaComentario, Usuario usuario, Entrada entrada) {
+		super();
+		this.idComentario = idComentario;
+		this.texto = texto;
+		this.fechaComentario = fechaComentario;
+		this.usuario = usuario;
+		this.entrada = entrada;
+	}
+
+	public Comentario(String texto, Date fechaComentario) {
+		super();
+		this.texto = texto;
+		this.fechaComentario = fechaComentario;
+	}
+
 	public Long getIdComentario() {
 		return idComentario;
 	}
