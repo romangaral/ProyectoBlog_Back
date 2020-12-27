@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,12 +26,12 @@ public class UsuarioController {
 	@Autowired
 	private IUsuarioService usuarioService;
 
-	@GetMapping(value = "/listar")
+	@GetMapping(value = "/usuarios")
 	public List<Usuario> listar(Model model) {
 		return usuarioService.findAll();
 	}
 	
-	@GetMapping("/listar/{id}")
+	@GetMapping("/usuarios/{id}")
 	public Usuario mostrar(@PathVariable Long id) {
 		return this.usuarioService.findById(id);
 	}
@@ -40,6 +41,11 @@ public class UsuarioController {
 		usuario.setFechaAlta(new Date());
 		this.usuarioService.save(usuario);
 		return usuario;
+	}
+	
+	@DeleteMapping("/usuarios/{id}")
+	public void delete(@PathVariable Long id) {
+		this.usuarioService.delete(id);
 	}
 
 }
