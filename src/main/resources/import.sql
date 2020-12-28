@@ -1,6 +1,6 @@
 -----------------------------------------USUARIOS-------------------------------------
-INSERT INTO usuarios(nombre, apellido, email, fecha_alta) VALUES('Roman', 'Garcia', 'rga@gamil.com', '2020-05-06');
-INSERT INTO usuarios(nombre, apellido, email, fecha_alta) VALUES('Namor', 'Gara', 'total@gamil.com', '2019-10-06');
+INSERT INTO usuarios(nombre, apellido, email) VALUES('Roman', 'Garcia', 'rga@gamil.com');
+INSERT INTO usuarios(nombre, apellido, email) VALUES('Namor', 'Gara', 'total@gamil.com');
 
 -----------------------------------------ROLES---------------------------------------
 INSERT INTO roles(tipo) VALUES('ADMIN');
